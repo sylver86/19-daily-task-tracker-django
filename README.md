@@ -1,33 +1,77 @@
-# 📝 Django Web Tracking Task
+# Daily Task Tracker — Django Web Application
 
-## 🔍 Overview
-**Django Tracking Task** is a web application that empowers users to effortlessly **manage and track** their daily tasks. Built on the **Django** framework, it provides a **clean**, **responsive**, and **user-friendly** experience that makes task management a breeze.
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/Django-4.x-092E20?logo=django&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?logo=bootstrap&logoColor=white)
+![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?logo=sqlite&logoColor=white)
 
----
+## Overview
 
-## ⭐ Features
-- **🔐 User Authentication**: Secure login and registration to control user access.
-- **🗂️ Task Management**: Create, edit, and delete tasks seamlessly.
-- **📊 Task Tracking**: Monitor task completion over a customizable date range.
-- **📈 Interactive Graphs**: Get a clear visual overview of task completion via interactive charts.
-- **📱 Mobile Friendly**: Responsive design for desktop and mobile viewing.
-- **⚙️ Admin Dashboard**: Manage users and tasks efficiently through an intuitive admin panel.
+Full-stack web application for **personal task management and productivity tracking**, built with Django.
+Users can log daily tasks, monitor completion over time, and view interactive charts of their productivity trends — all through a responsive, mobile-friendly interface.
 
----
-
-## 🛠️ Technologies Used
-- **🐍 Django**: A high-level Python web framework with clean, pragmatic design.
-- **💎 Bootstrap**: Ensures responsiveness and adaptability across devices.
+Demonstrates end-to-end Django development: authentication, ORM, CRUD views, URL routing, custom template tags, and Chart.js integration.
 
 ---
 
-## ⚙️ Functions Utilized
-- **`generate_plot()`**: Produces interactive visual representations of task completion over time.
-- **`calculate_completion_percentage()`**: Computes completed task percentages based on logged data.
-- **📝 CRUD Operations**: Offers **Create**, **Read**, **Update**, and **Delete** capabilities for tasks via Django’s ORM.
-- **💻 Responsive Templates**: Leverages Bootstrap to provide a fluid user interface on both mobile and desktop devices.
+## Features
+
+| Feature | Implementation |
+|---------|---------------|
+| User authentication | Django `auth` — register, login, logout |
+| Task CRUD | Create, read, update, delete via Django ORM |
+| Completion tracking | Date-range filtering with completion percentage |
+| Interactive charts | `generate_plot()` — task completion trend over time |
+| Completion KPI | `calculate_completion_percentage()` — daily/weekly stats |
+| Admin dashboard | Django admin panel for user and task management |
+| Responsive UI | Bootstrap 5 — mobile and desktop optimised |
 
 ---
 
-## 🔗 GitHub Repository 
-- Dive into my codebase in the project files contained in this Git repository.
+## Setup
+
+```bash
+git clone https://github.com/sylver86/19-daily-task-tracker-django.git
+cd 19-daily-task-tracker-django
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install django
+
+# Apply migrations
+python manage.py migrate
+
+# Create admin user
+python manage.py createsuperuser
+
+# Run development server
+python manage.py runserver
+```
+
+Open `http://127.0.0.1:8000` in your browser.
+Admin panel available at `http://127.0.0.1:8000/admin`.
+
+---
+
+## Project Structure
+
+```
+19-daily-task-tracker-django/
+├── manage.py
+├── mydailytracker/        # Django project settings
+├── tracker/               # Main app
+│   ├── models.py          # Task model
+│   ├── views.py           # CRUD views + chart generation
+│   ├── urls.py            # URL routing
+│   └── templates/         # Bootstrap HTML templates
+└── urls.py                # Root URL configuration
+```
+
+---
+
+## Technologies
+
+`Python 3.10+` · `Django 4.x` · `SQLite` · `Bootstrap 5` · `Chart.js` · `Django ORM`
